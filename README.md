@@ -3,9 +3,55 @@
 Evidence-backed living PRD generation skill for Codex agents.
 
 This repository packages the `prd` skill under `skills/prd/` so it can be
-installed from GitHub with Codex's skill installer.
+installed from GitHub with `npx skills`, `gh skill`, or Codex's built-in skill
+installer.
 
 ## Install
+
+### skills.sh / `npx skills`
+
+Install globally for Codex:
+
+```bash
+npx skills add https://github.com/golbin/prd-skill/tree/main/skills/prd \
+  -g \
+  -a codex \
+  -y
+```
+
+Or install from the repository and select the `prd` skill:
+
+```bash
+npx skills add golbin/prd-skill --skill prd -g -a codex -y
+```
+
+List available skills in this repository:
+
+```bash
+npx skills add golbin/prd-skill --list
+```
+
+### GitHub CLI `gh skill`
+
+Requires GitHub CLI 2.90.0 or newer.
+
+```bash
+gh skill install golbin/prd-skill prd --agent codex --scope user
+```
+
+The alias form also works on supported GitHub CLI versions:
+
+```bash
+gh skills add golbin/prd-skill prd --agent codex --scope user
+```
+
+Preview before installing:
+
+```bash
+gh skill preview golbin/prd-skill prd
+```
+
+### Codex Skill Installer
 
 In Codex, ask:
 
@@ -23,7 +69,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
 
 After installation, restart Codex so the new skill is picked up.
 
-## One-Line Install
+### Shell Installer
 
 For machines with `bash`, `curl`, and `tar`:
 
