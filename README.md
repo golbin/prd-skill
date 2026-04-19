@@ -1,10 +1,15 @@
-# PRD Skill
+# Agent Skills
 
-Evidence-backed living PRD generation skill for Codex agents.
+Reusable agent skills for Codex and other Agent Skills compatible tools.
 
-This repository packages the `prd` skill under `skills/prd/` so it can be
-installed from GitHub with `npx skills`, `gh skill`, or Codex's built-in skill
-installer.
+Skills are packaged under `skills/<skill-name>/` so this repository can hold
+multiple installable skills. The first included skill is `prd`, an
+evidence-backed living PRD generator.
+
+## Available Skills
+
+- `prd`: Create or update evidence-backed living PRDs and phase execution files
+  under `tasks/`.
 
 ## Install
 
@@ -13,7 +18,7 @@ installer.
 Install globally for Codex:
 
 ```bash
-npx skills add https://github.com/golbin/prd-skill/tree/main/skills/prd \
+npx skills add https://github.com/golbin/agent-skills/tree/main/skills/prd \
   -g \
   -a codex \
   -y
@@ -22,13 +27,13 @@ npx skills add https://github.com/golbin/prd-skill/tree/main/skills/prd \
 Or install from the repository and select the `prd` skill:
 
 ```bash
-npx skills add golbin/prd-skill --skill prd -g -a codex -y
+npx skills add golbin/agent-skills --skill prd -g -a codex -y
 ```
 
 List available skills in this repository:
 
 ```bash
-npx skills add golbin/prd-skill --list
+npx skills add golbin/agent-skills --list
 ```
 
 ### GitHub CLI `gh skill`
@@ -36,19 +41,19 @@ npx skills add golbin/prd-skill --list
 Requires GitHub CLI 2.90.0 or newer.
 
 ```bash
-gh skill install golbin/prd-skill prd --agent codex --scope user
+gh skill install golbin/agent-skills prd --agent codex --scope user
 ```
 
 The alias form also works on supported GitHub CLI versions:
 
 ```bash
-gh skills add golbin/prd-skill prd --agent codex --scope user
+gh skills add golbin/agent-skills prd --agent codex --scope user
 ```
 
 Preview before installing:
 
 ```bash
-gh skill preview golbin/prd-skill prd
+gh skill preview golbin/agent-skills prd
 ```
 
 ### Codex Skill Installer
@@ -56,14 +61,14 @@ gh skill preview golbin/prd-skill prd
 In Codex, ask:
 
 ```text
-Use $skill-installer to install https://github.com/golbin/prd-skill/tree/main/skills/prd
+Use $skill-installer to install https://github.com/golbin/agent-skills/tree/main/skills/prd
 ```
 
 Or run the installer script directly:
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo golbin/prd-skill \
+  --repo golbin/agent-skills \
   --path skills/prd
 ```
 
@@ -74,7 +79,7 @@ After installation, restart Codex so the new skill is picked up.
 For machines with `bash`, `curl`, and `tar`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/golbin/prd-skill/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/golbin/agent-skills/main/install.sh | bash
 ```
 
 ## Usage
