@@ -1,0 +1,4 @@
+interface:
+  display_name: "PRD"
+  short_description: "Evidence-backed living PRDs for agent work"
+  default_prompt: "Use $prd to create an evidence-backed PRD for this feature."
