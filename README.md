@@ -36,11 +36,11 @@ cp templates/CLAUDE.md /path/to/project/CLAUDE.md
 Install globally for Codex:
 
 ```bash
-npx skills add https://github.com/golbin/agent-skills/tree/main/skills/prd \
+npx skills add https://github.com/playmoreai/agent-skills/tree/main/skills/prd \
   -g \
   -a codex \
   -y
-npx skills add https://github.com/golbin/agent-skills/tree/main/skills/review-implementation \
+npx skills add https://github.com/playmoreai/agent-skills/tree/main/skills/review-implementation \
   -g \
   -a codex \
   -y
@@ -49,14 +49,14 @@ npx skills add https://github.com/golbin/agent-skills/tree/main/skills/review-im
 Or install from the repository and select a skill:
 
 ```bash
-npx skills add golbin/agent-skills --skill prd -g -a codex -y
-npx skills add golbin/agent-skills --skill review-implementation -g -a codex -y
+npx skills add playmoreai/agent-skills --skill prd -g -a codex -y
+npx skills add playmoreai/agent-skills --skill review-implementation -g -a codex -y
 ```
 
 List available skills in this repository:
 
 ```bash
-npx skills add golbin/agent-skills --list
+npx skills add playmoreai/agent-skills --list
 ```
 
 ### GitHub CLI `gh skill`
@@ -64,22 +64,22 @@ npx skills add golbin/agent-skills --list
 Requires GitHub CLI 2.90.0 or newer.
 
 ```bash
-gh skill install golbin/agent-skills prd --agent codex --scope user
-gh skill install golbin/agent-skills review-implementation --agent codex --scope user
+gh skill install playmoreai/agent-skills prd --agent codex --scope user
+gh skill install playmoreai/agent-skills review-implementation --agent codex --scope user
 ```
 
 The alias form also works on supported GitHub CLI versions:
 
 ```bash
-gh skills add golbin/agent-skills prd --agent codex --scope user
-gh skills add golbin/agent-skills review-implementation --agent codex --scope user
+gh skills add playmoreai/agent-skills prd --agent codex --scope user
+gh skills add playmoreai/agent-skills review-implementation --agent codex --scope user
 ```
 
 Preview before installing:
 
 ```bash
-gh skill preview golbin/agent-skills prd
-gh skill preview golbin/agent-skills review-implementation
+gh skill preview playmoreai/agent-skills prd
+gh skill preview playmoreai/agent-skills review-implementation
 ```
 
 ### Codex Skill Installer
@@ -87,18 +87,18 @@ gh skill preview golbin/agent-skills review-implementation
 In Codex, ask:
 
 ```text
-Use $skill-installer to install https://github.com/golbin/agent-skills/tree/main/skills/prd
-Use $skill-installer to install https://github.com/golbin/agent-skills/tree/main/skills/review-implementation
+Use $skill-installer to install https://github.com/playmoreai/agent-skills/tree/main/skills/prd
+Use $skill-installer to install https://github.com/playmoreai/agent-skills/tree/main/skills/review-implementation
 ```
 
 Or run the installer script directly:
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo golbin/agent-skills \
+  --repo playmoreai/agent-skills \
   --path skills/prd
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo golbin/agent-skills \
+  --repo playmoreai/agent-skills \
   --path skills/review-implementation
 ```
 
@@ -109,8 +109,8 @@ After installation, restart Codex so the new skill is picked up.
 For machines with `bash`, `curl`, and `tar`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/golbin/agent-skills/main/install.sh | bash
-curl -fsSL https://raw.githubusercontent.com/golbin/agent-skills/main/install.sh \
+curl -fsSL https://raw.githubusercontent.com/playmoreai/agent-skills/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/playmoreai/agent-skills/main/install.sh \
   | SKILL_PATH=skills/review-implementation SKILL_NAME=review-implementation bash
 ```
 

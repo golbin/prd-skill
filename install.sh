@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO="${REPO:-golbin/agent-skills}"
+REPO="${REPO:-playmoreai/agent-skills}"
 REF="${REF:-main}"
 SKILL_PATH="${SKILL_PATH:-skills/prd}"
 SKILL_NAME="${SKILL_NAME:-prd}"
