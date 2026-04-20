@@ -5,12 +5,29 @@ Reusable agent skills for Codex and other Agent Skills compatible tools.
 Skills are packaged under `skills/<skill-name>/` so this repository can hold
 multiple installable skills.
 
+## Repository Layout
+
+- `skills/`: installable agent skills discovered by `npx skills` and `gh skill`
+- `templates/`: copyable project templates such as `AGENTS.md` and `CLAUDE.md`
+
 ## Available Skills
 
 - `prd`: Create or update evidence-backed living PRDs and phase execution files
   under `tasks/`.
 - `review-implementation`: Review code against markdown requirements/spec docs,
   identify gaps and risks, and apply focused fixes.
+
+## Templates
+
+- `templates/AGENTS.md`: concise project instruction template for coding agents
+- `templates/CLAUDE.md`: delegates Claude-compatible tools to `AGENTS.md`
+
+Copy the templates into a project root and customize the placeholders:
+
+```bash
+cp templates/AGENTS.md /path/to/project/AGENTS.md
+cp templates/CLAUDE.md /path/to/project/CLAUDE.md
+```
 
 ## Install
 
